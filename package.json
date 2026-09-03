@@ -1,0 +1,7 @@
+{
+  "name": "metrics-landing-wireframe",
+  "private": true,
+  "scripts": {
+    "preview": "node dev-server.mjs"
+  }
+}
