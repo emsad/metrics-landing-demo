@@ -146,9 +146,10 @@ p { margin: 0; }
 #cosa-ottieni > .container > .section-intro { max-width: min(100%, var(--typography-process-intro-max-width)); }
 #team > .container > .section-intro { max-width: min(100%, var(--typography-team-intro-max-width)); }
 
-.site-header { align-items: center; background: var(--header-positive-background); border: var(--shape-border-width) solid var(--header-positive-border); border-radius: var(--shape-header-radius); box-shadow: var(--header-shadow); color: var(--header-text); display: flex; height: var(--layout-header-height); justify-content: space-between; margin: var(--layout-header-margin-block) var(--layout-header-margin-inline); padding-inline: var(--layout-header-padding-inline); position: sticky; top: var(--layout-header-margin-block); z-index: 10; }
+.site-header { align-items: center; background: var(--header-positive-background); border: var(--shape-border-width) solid var(--header-positive-border); border-radius: var(--shape-header-radius); box-shadow: var(--header-shadow); color: var(--header-text); display: flex; height: var(--layout-header-height); justify-content: space-between; margin: var(--layout-header-margin-block) auto; padding-inline: var(--layout-header-padding-inline); position: sticky; top: var(--layout-header-margin-block); width: min(100% - (var(--layout-page-gutter) * 2), var(--layout-content-max-width)); z-index: 10; }
 .site-header.header-on-negative { background: var(--header-negative-background); backdrop-filter: blur(var(--header-blur)) saturate(var(--header-saturation)); -webkit-backdrop-filter: blur(var(--header-blur)) saturate(var(--header-saturation)); border-color: var(--header-negative-border); }
 .brand { align-items: center; display: inline-flex; font-size: 0.7rem; font-weight: var(--font-weight-interface); gap: 0.55rem; letter-spacing: 0.11em; }
+.brand picture, .footer-layout picture { display: contents; }
 .brand-logo { display: block; height: var(--brand-logo-size); object-fit: contain; width: var(--brand-logo-size); }
 .site-nav { display: flex; gap: 1.5rem; }
 .site-nav a, .site-footer a { color: var(--color-text-muted); font-size: 0.875rem; transition: color var(--motion-transition-fast); }
@@ -207,6 +208,7 @@ p { margin: 0; }
 .people-grid { display: grid; gap: var(--layout-grid-gap); grid-template-columns: repeat(2, minmax(0, 1fr)); margin: var(--layout-section-compact-padding) auto 0; max-width: 64rem; }
 .person-card { align-items: center; display: flex; flex-direction: column; gap: 1.5rem; overflow: hidden; padding: clamp(1.4rem, 3vw, 2.25rem); text-align: center; }
 .person-portrait { aspect-ratio: 1 / 1; border: 2px solid color-mix(in srgb, var(--color-accent), transparent 32%); border-radius: 50%; box-shadow: 0 0 0 0.5rem rgb(96 216 62 / 0.04); margin: 0; max-width: 18rem; overflow: hidden; width: min(100%, 18rem); }
+.person-portrait picture, .media-slot--illustrated picture { display: block; height: 100%; width: 100%; }
 .person-portrait img { display: block; height: 100%; object-fit: cover; width: 100%; }
 .person-card__copy { align-items: center; display: flex; flex-direction: column; width: 100%; }
 .person-card h3 { font-size: clamp(2rem, 3.4vw, 3.15rem); margin-top: 0.45rem; }
@@ -358,6 +360,8 @@ p { margin: 0; }
 }
 
 @media (min-width: 901px) {
+  /* Standards-based desktop enlargement; avoids the layout side effects of CSS zoom. */
+  html { font-size: 112.5%; }
   .metrics-classic #cosa-ottieni .step-card:nth-child(2) .card-illustration img {
     height: 184.88px;
     margin: -14px 0 -15px -12px;
@@ -379,7 +383,7 @@ p { margin: 0; }
 }
 
 @media (max-width: 720px) {
-  .site-header { gap: 0.75rem; margin: 1rem; top: 1rem; }
+  .site-header { gap: 0.75rem; margin: 1rem auto; top: 1rem; }
   .site-nav { display: none; }
   .site-header .button { padding-inline: 0.85rem; }
   .brand small { display: none; }
@@ -430,6 +434,11 @@ p { margin: 0; }
   .section-cta { align-items: stretch; flex-direction: column; text-align: left; }
   .section-cta .button { width: 100%; }
   .footer-layout { align-items: start; flex-direction: column; gap: 1.5rem; }
+}
+
+@media (max-width: 340px) {
+  .site-header .brand-logo { height: 3rem; width: 3rem; }
+  .site-header .button { font-size: 0.75rem; padding-inline: 0.65rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
