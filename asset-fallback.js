@@ -1,5 +1,5 @@
 (() => {
-  const cacheVersion = "20260910-3";
+  const cacheVersion = "20260910-4";
 
   const loadFallback = (image) => {
     const originalSource = image.getAttribute("src");

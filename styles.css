@@ -384,6 +384,13 @@ p { margin: 0; }
     text-align: center;
     width: 100%;
   }
+  #problem-title > .title-line,
+  #process-title > .title-line,
+  #evidence-title > .title-line {
+    margin-inline: auto;
+    max-width: 100%;
+    width: fit-content;
+  }
 }
 
 @media (min-width: 901px) {
@@ -397,8 +404,10 @@ p { margin: 0; }
   .site-header .site-nav a { font-size: 1rem; }
   .title-line { white-space: nowrap; }
   .section--centered > .container > h2 .title-line {
+    margin-inline: auto;
+    max-width: 100%;
     text-align: center;
-    width: 100%;
+    width: fit-content;
   }
   .metrics-classic #cosa-ottieni .card-illustration picture {
     align-items: center;
