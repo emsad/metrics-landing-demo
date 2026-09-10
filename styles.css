@@ -310,6 +310,22 @@ p { margin: 0; }
 .metrics-classic #prova { padding-top: 0; }
 .metrics-classic #evidence-title { max-width: min(100%, 31.8125rem); }
 
+/* Thank-you page: immediate confirmation with the same Metrics visual language. */
+.thank-you-page { min-height: 100dvh; }
+.thank-you-main { min-height: calc(100dvh - var(--layout-header-height) - 10rem); }
+.thank-you-section { align-items: center; display: grid; min-height: calc(100dvh - var(--layout-header-height) - 8rem); padding-block: var(--layout-section-compact-padding); }
+.thank-you-layout { align-items: center; display: grid; gap: var(--layout-content-gap); grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.75fr); }
+.thank-you-copy { align-items: flex-start; display: flex; flex-direction: column; }
+.thank-you-copy .eyebrow { margin-bottom: 1.25rem; }
+.thank-you-copy h1 { font-size: clamp(3rem, 5.25vw, 4.8rem); max-width: 11ch; }
+.thank-you-copy .lede { margin-top: 1.5rem; max-width: 42rem; }
+.thank-you-note { border-left: 3px solid var(--color-accent); margin-top: 2rem; max-width: 40rem; padding: 0.15rem 0 0.15rem 1.25rem; }
+.thank-you-note h2 { font-size: 1.45rem; }
+.thank-you-note p { color: var(--color-text-muted); margin-top: 0.55rem; }
+.thank-you-copy > .button { margin-top: 2rem; }
+.thank-you-visual { aspect-ratio: 1 / 1; }
+.thank-you-visual img { transform: scale(1.04); }
+
 /* Restrained diagonal cuts keep the section transitions slightly angled. */
 .metrics-classic #team,
 .metrics-classic #contatto {
@@ -434,6 +450,12 @@ p { margin: 0; }
   .section-cta { align-items: stretch; flex-direction: column; text-align: left; }
   .section-cta .button { width: 100%; }
   .footer-layout { align-items: start; flex-direction: column; gap: 1.5rem; }
+  .thank-you-main, .thank-you-section { min-height: auto; }
+  .thank-you-section { padding-block: var(--layout-mobile-section-padding); }
+  .thank-you-layout { gap: 2rem; grid-template-columns: 1fr; }
+  .thank-you-copy h1 { font-size: clamp(2.75rem, 14vw, 4rem); max-width: 100%; }
+  .thank-you-copy > .button { width: 100%; }
+  .thank-you-visual { max-width: 28rem; order: 2; width: 100%; }
 }
 
 @media (max-width: 340px) {
