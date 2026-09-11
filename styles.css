@@ -398,6 +398,10 @@ p { margin: 0; }
 @media (min-width: 901px) {
   /* Standards-based desktop enlargement; avoids the layout side effects of CSS zoom. */
   html { font-size: 112.5%; }
+  /* Anton's glyph shapes make these centered headings read slightly right-heavy. */
+  #problem-title,
+  #process-title,
+  #evidence-title { transform: translateX(-1.25rem); }
   .site-header .site-nav {
     left: 50%;
     position: absolute;
