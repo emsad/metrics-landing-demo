@@ -433,15 +433,13 @@ p { margin: 0; }
 }
 
 @media (min-width: 901px) {
-  /* Standards-based desktop enlargement; avoids the layout side effects of CSS zoom. */
-  html { font-size: 112.5%; }
+  /* Keep the root scale stable: browser zoom must not toggle typography at a breakpoint. */
   .site-header .site-nav {
     left: 50%;
     position: absolute;
     transform: translateX(-50%);
   }
   .site-header .site-nav a { font-size: 1rem; }
-  .title-line { white-space: nowrap; }
   .section--centered > .container > h2 .title-line {
     margin-inline: auto;
     max-width: 100%;
