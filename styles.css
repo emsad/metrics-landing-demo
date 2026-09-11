@@ -179,7 +179,7 @@ p { margin: 0; }
 #problem-title { max-width: min(100%, var(--typography-problem-heading-max-width)); }
 #process-title { max-width: min(100%, var(--typography-process-heading-max-width)); }
 #authority-title { max-width: min(100%, 28.945rem); }
-#team-title { max-width: min(100%, 34.25rem); }
+#team-title { max-width: min(100%, 46rem); }
 #fit-title { max-width: min(100%, var(--typography-fit-heading-max-width)); }
 #problema > .container > .section-intro { max-width: min(100%, var(--typography-problem-intro-max-width)); }
 #cosa-ottieni > .container > .section-intro { max-width: min(100%, var(--typography-process-intro-max-width)); }
@@ -423,7 +423,8 @@ p { margin: 0; }
   }
   #problem-title > .title-line,
   #process-title > .title-line,
-  #evidence-title > .title-line {
+  #evidence-title > .title-line,
+  #team-title > .title-line {
     display: block;
     margin-inline: auto;
     max-width: 100%;
@@ -440,6 +441,7 @@ p { margin: 0; }
     transform: translateX(-50%);
   }
   .site-header .site-nav a { font-size: 1rem; }
+  .title-line { white-space: nowrap; }
   .section--centered > .container > h2 .title-line {
     margin-inline: auto;
     max-width: 100%;
