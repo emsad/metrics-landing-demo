@@ -207,6 +207,7 @@ p { margin: 0; }
 .section--hero { min-height: auto; padding-block: var(--layout-section-padding); display: grid; align-items: center; }
 .hero-layout, .split-layout, .case-study-layout, .form-layout { align-items: center; display: grid; gap: var(--layout-content-gap); grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.9fr); }
 .hero-layout, .split-layout, .case-study-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.case-study-layout { grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr); }
 .hero-copy { display: grid; justify-items: start; gap: 0; }
 .hero-copy .eyebrow { margin-bottom: 1.25rem; }
 .media-slot { align-items: center; background: repeating-linear-gradient(135deg, transparent 0 13px, color-mix(in srgb, var(--color-placeholder), var(--color-border) 28%) 13px 14px), var(--color-placeholder); border: var(--shape-border-width) dashed var(--color-border); border-radius: var(--shape-card-radius); color: var(--color-text-muted); display: flex; flex-direction: column; gap: 0.4rem; justify-content: center; min-height: 15rem; padding: var(--control-card-padding); text-align: center; }
