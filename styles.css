@@ -108,10 +108,10 @@
   --layout-contact-copy-max-width: 25rem;
 
   /* Larghezze mirate per mantenere i testi leggibili e bilanciati */
-  --typography-centered-heading-max-width: 41.25rem;
+  --typography-centered-heading-max-width: 52rem;
   --typography-centered-intro-max-width: 37.79rem;
-  --typography-problem-heading-max-width: 42rem;
-  --typography-process-heading-max-width: 46rem;
+  --typography-problem-heading-max-width: 54rem;
+  --typography-process-heading-max-width: 54rem;
   --typography-fit-heading-max-width: 51.86rem;
   --typography-problem-intro-max-width: 30.79rem;
   --typography-process-intro-max-width: 32.92rem;
@@ -179,7 +179,7 @@ p { margin: 0; }
 #problem-title { max-width: min(100%, var(--typography-problem-heading-max-width)); }
 #process-title { max-width: min(100%, var(--typography-process-heading-max-width)); }
 #authority-title { max-width: min(100%, 28.945rem); }
-#team-title { max-width: min(100%, 46rem); }
+#team-title { max-width: min(100%, 52rem); }
 #fit-title { max-width: min(100%, var(--typography-fit-heading-max-width)); }
 #problema > .container > .section-intro { max-width: min(100%, var(--typography-problem-intro-max-width)); }
 #cosa-ottieni > .container > .section-intro { max-width: min(100%, var(--typography-process-intro-max-width)); }
@@ -348,7 +348,7 @@ p { margin: 0; }
 .metrics-classic .media-slot--portrait img,
 .metrics-classic .media-slot--video img { transform: scale(1.15); }
 .metrics-classic #prova { padding-top: var(--layout-section-padding); }
-.metrics-classic #evidence-title { max-width: min(100%, 40rem); }
+.metrics-classic #evidence-title { max-width: min(100%, 50rem); }
 
 /* Thank-you page: immediate confirmation with the same Metrics visual language. */
 .thank-you-page, .thank-you-main { min-height: 100dvh; }
