@@ -1,3 +1,40 @@
+/* Self-hosted webfonts keep the typography identical on Safari/iPhone and on desktop. */
+@font-face {
+  font-display: swap;
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/anton-latin.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/ibm-plex-sans-condensed-400-latin.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./assets/fonts/ibm-plex-sans-condensed-500-latin.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./assets/fonts/ibm-plex-sans-condensed-600-latin.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./assets/fonts/ibm-plex-sans-condensed-700-latin.woff2") format("woff2");
+}
+
 /*
   Metrics wireframe - global design controls.
   Change only the values in :root to restyle every shared component.
