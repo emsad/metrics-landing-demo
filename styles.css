@@ -104,7 +104,7 @@
   --layout-header-margin-block: 0.625rem;
   --layout-header-margin-inline: 1.5625rem;
   --layout-header-padding-inline: 0.92875rem;
-  --layout-case-copy-max-width: 26.685rem;
+  --layout-case-copy-max-width: 34rem;
   --layout-contact-copy-max-width: 25rem;
 
   /* Larghezze mirate per mantenere i testi leggibili e bilanciati */
@@ -179,6 +179,7 @@ p { margin: 0; }
 #problem-title { max-width: min(100%, var(--typography-problem-heading-max-width)); }
 #process-title { max-width: min(100%, var(--typography-process-heading-max-width)); }
 #authority-title { max-width: min(100%, 28.945rem); }
+#case-study-title { max-width: min(100%, 24ch); }
 #team-title { max-width: min(100%, 52rem); }
 #fit-title { max-width: min(100%, var(--typography-fit-heading-max-width)); }
 #problema > .container > .section-intro { max-width: min(100%, var(--typography-problem-intro-max-width)); }
