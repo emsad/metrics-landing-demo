@@ -1,8 +1,8 @@
 (function (window, document) {
   'use strict';
 
-  // Iubenda carica questo file solo dopo il consenso alla finalità Misurazione
-  // tramite data-suppressedsrc e _iub_cs_activate nel markup HTML.
+  // CookieYes carica questo file solo dopo il consenso alla categoria
+  // Analytics tramite l'attributo data-cookieyes nel markup HTML.
   if (window.__metricsClarityInitialized) {
     return;
   }
