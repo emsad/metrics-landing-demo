@@ -6,6 +6,8 @@ const BUDGET_OPTIONS = [
   'Più di 3.000 €',
   'Non l’ho ancora definito'
 ];
+const COMMUNICATIONS_CONSENT_VERSION = 'metrics-communications-v1-20261012';
+const COMMUNICATIONS_CONSENT_TEXT = 'Acconsento a ricevere comunicazioni di Metrics.';
 
 function doGet() {
   return ContentService.createTextOutput('Endpoint richieste Metrics attivo');
@@ -27,6 +29,7 @@ function doPost(event) {
     budget: clean_(parameters.budget_total, 80),
     message: clean_(parameters.message, 3000)
   };
+  const communicationsConsentGiven = parameters.metrics_communications_consent === COMMUNICATIONS_CONSENT_VERSION;
 
   if (!lead.name || !validEmail_(lead.email) || !validPhone_(lead.phone) ||
       BUDGET_OPTIONS.indexOf(lead.budget) === -1 || !lead.message) {
@@ -68,7 +71,9 @@ function doPost(event) {
       cell_(clean_(parameters.gbraid, 500)),
       cell_(clean_(parameters.wbraid, 500)),
       cell_(clean_(parameters.analytics_consent, 40)),
-      cell_(clean_(parameters.advertising_consent, 40))
+      cell_(clean_(parameters.advertising_consent, 40)),
+      communicationsConsentGiven ? 'Accettato' : 'Non prestato',
+      communicationsConsentGiven ? COMMUNICATIONS_CONSENT_TEXT : ''
     ];
 
     sheet.appendRow(row);

@@ -67,10 +67,12 @@ assert.match(accepted.content, /"ok":true/);
 assert.match(accepted.content, /window\.top\.postMessage/);
 assert.equal(accepted.xFrameOptionsMode, 'ALLOWALL');
 assert.equal(rows.length, 1);
-assert.equal(rows[0].length, 18);
+assert.equal(rows[0].length, 20);
 assert.equal(rows[0][3], "'+39 333 123 4567");
 assert.equal(rows[0][4], 'Tra 2.000 e 3.000 €');
 assert.equal(rows[0][5], 'Richiesta sintetica di prova');
+assert.equal(rows[0][18], 'Non prestato');
+assert.equal(rows[0][19], '');
 assert.ok(rows[0][0] instanceof Date);
 
 const duplicate = submit();
@@ -89,4 +91,24 @@ const bot = submit({ _honey: 'compilato-dal-bot' });
 assert.match(bot.content, /"ok":true/);
 assert.equal(rows.length, 1);
 
-console.log('Verifica Apps Script superata: dati validi, cellulare obbligatorio, fasce budget consentite, anti-duplicato e honeypot.');
+const consented = submit({
+  email: 'consented@example.test',
+  phone: '+39 333 987 6543',
+  metrics_communications_consent: 'metrics-communications-v1-20261012'
+});
+assert.match(consented.content, /"ok":true/);
+assert.equal(rows.length, 2);
+assert.equal(rows[1][18], 'Accettato');
+assert.equal(rows[1][19], 'Acconsento a ricevere comunicazioni di Metrics.');
+
+const invalidConsent = submit({
+  email: 'invalid-consent@example.test',
+  phone: '+39 333 111 2222',
+  metrics_communications_consent: 'anything-else'
+});
+assert.match(invalidConsent.content, /"ok":true/);
+assert.equal(rows.length, 3);
+assert.equal(rows[2][18], 'Non prestato');
+assert.equal(rows[2][19], '');
+
+console.log('Verifica Apps Script superata: lead validi, cellulare obbligatorio, budget consentito, anti-duplicato, honeypot e consenso facoltativo registrato solo se selezionato.');
