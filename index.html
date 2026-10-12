@@ -20,7 +20,7 @@
     <link rel="icon" type="image/png" sizes="512x512" href="./assets/favicon-512.png?v=20260910-5" />
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png?v=20260910-5" />
     <meta name="theme-color" content="#000000" />
-    <link rel="stylesheet" href="./styles.css?v=20261012-1" />
+    <link rel="stylesheet" href="./styles.css?v=20261012-2" />
     <script src="./asset-fallback.js?v=20260911-14" defer></script>
     <script src="./metrics-sheet-submit.js?v=20261012-1" defer></script>
     <script data-cookieyes="cookieyes-advertisement" src="./meta-pixel.js?v=20261012-1" charset="utf-8"></script>
@@ -235,8 +235,11 @@
             <div class="field"><label for="phone">Cellulare WhatsApp</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+39 333 123 4567" required /></div>
             <div class="field"><label for="budget-total">Budget complessivo mensile</label><select id="budget-total" name="budget_total" required><option value="" disabled selected>Seleziona una fascia</option><option value="Meno di 2.000 €">Meno di 2.000 €</option><option value="Tra 2.000 e 3.000 €">Tra 2.000 e 3.000 €</option><option value="Più di 3.000 €">Più di 3.000 €</option><option value="Non l’ho ancora definito">Non l’ho ancora definito</option></select></div>
             <div class="field"><label for="message">Come stai gestendo oggi marketing e acquisizione?</label><textarea id="message" name="message" placeholder="Descrivi brevemente la situazione e il principale problema commerciale che vuoi risolvere" required></textarea></div>
+            <div class="newsletter-consent">
+              <input id="newsletter-consent" name="newsletter_consent" type="checkbox" value="metrics-newsletter-email-v1-20261012" />
+              <label for="newsletter-consent">Acconsento al trattamento dei dati personali forniti tramite il modulo per ricevere via email la newsletter di Metrics, ai sensi del GDPR (Regolamento UE 2016/679) e del D.Lgs. 101/2018. Il consenso è facoltativo e posso revocarlo in qualsiasi momento. Consulta l’<a href="https://www.iubenda.com/privacy-policy/48751025" target="_blank" rel="noopener noreferrer">informativa privacy</a>.</label>
+            </div>
             <button class="button button--primary" type="submit">Richiedi valutazione gratuita</button>
-            <p class="form-microcopy">I dati inseriti saranno registrati nel foglio Google “Metrics • Ads” per gestire la tua richiesta. Il foglio è pubblico sul web: chiunque abbia il link può leggere i contatti. Consulta l’<a href="https://www.iubenda.com/privacy-policy/48751025" target="_blank" rel="noopener noreferrer">informativa privacy</a>.</p>
             <p id="form-status" class="form-microcopy" role="status" aria-live="polite"></p>
             <p class="form-microcopy">La videochiamata dura 20 minuti e non comporta alcun impegno.</p>
           </form>
