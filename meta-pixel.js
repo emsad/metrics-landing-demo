@@ -29,8 +29,17 @@
   fbq('init', '1627756612027658');
   fbq('track', 'PageView');
 
-  var conversionEvent = document.body && document.body.getAttribute('data-meta-event');
-  if (conversionEvent) {
-    fbq('track', conversionEvent);
+  var trackConversion = function () {
+    var conversionEvent = document.body && document.body.getAttribute('data-meta-event');
+
+    if (conversionEvent && window.__metricsConfirmedLead === true) {
+      fbq('track', conversionEvent);
+    }
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', trackConversion, { once: true });
+  } else {
+    trackConversion();
   }
 })(window, document);

@@ -1,8 +1,15 @@
 <!doctype html>
 <html lang="it">
   <head>
+    <script src="./metrics-tracking.js?v=20261012-1" charset="utf-8"></script>
     <!-- CookieYes: gestione del consenso GDPR -->
     <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/d19f8527d84fb5f69890ee162e31f96b/script.js"></script>
+    <!-- Google Ads: caricato solo dopo il consenso alla categoria Advertisement di CookieYes -->
+    <script async data-cookieyes="cookieyes-advertisement" src="https://www.googletagmanager.com/gtag/js?id=AW-11340495714"></script>
+    <script>
+      window.gtag('js', new Date());
+      window.gtag('config', 'AW-11340495714');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Metrics crea sistemi di acquisizione B2B per PMI: lead generation, qualifica telefonica, appuntamenti commerciali e ottimizzazione continua." />
@@ -13,10 +20,11 @@
     <link rel="icon" type="image/png" sizes="512x512" href="./assets/favicon-512.png?v=20260910-5" />
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png?v=20260910-5" />
     <meta name="theme-color" content="#000000" />
-    <link rel="stylesheet" href="./styles.css?v=20260911-15" />
+    <link rel="stylesheet" href="./styles.css?v=20261012-1" />
     <script src="./asset-fallback.js?v=20260911-14" defer></script>
-    <script data-cookieyes="cookieyes-advertisement" src="./meta-pixel.js?v=20260916-3" charset="utf-8"></script>
-    <script data-cookieyes="cookieyes-analytics" src="./clarity-pixel.js?v=20260916-2" charset="utf-8"></script>
+    <script src="./metrics-sheet-submit.js?v=20261012-1" defer></script>
+    <script data-cookieyes="cookieyes-advertisement" src="./meta-pixel.js?v=20261012-1" charset="utf-8"></script>
+    <script data-cookieyes="cookieyes-analytics" src="./clarity-pixel.js?v=20261012-1" charset="utf-8"></script>
   </head>
   <body class="metrics-classic">
     <header class="site-header theme-negative header-on-negative">
@@ -203,18 +211,33 @@
             <h2 id="contact-title"><span class="contact-title-line">Parliamone per</span><span class="contact-title-line text-metrics">20 minuti.</span></h2>
             <p class="section-intro">La videochiamata serve a inquadrare la situazione, spiegare il metodo Metrics e mostrare esempi di dashboard anonimizzate. Se emergono le condizioni per lavorare insieme, verranno raccolte le informazioni necessarie per un'analisi successiva.</p>
           </div>
-          <form class="wireframe-form" method="post" action="https://formsubmit.co/info@metricshub.it">
+          <form class="wireframe-form" method="post" action="https://formsubmit.co/info@metricshub.it" data-sheet-endpoint="https://script.google.com/macros/s/AKfycbxgI_1KZ2GA3No348M_uh4m_4YGuguL9xPcW_9qSjfUwjzNK0Lrw2aCTkulpVG9HN7n/exec">
             <input type="hidden" name="_subject" value="Nuova richiesta di valutazione - Metrics" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_next" value="https://metricshub.it/thank-you.html" />
             <input type="hidden" name="_url" value="https://metricshub.it/#contatto" />
+            <input type="hidden" name="page_url" value="" />
+            <input type="hidden" name="referrer_url" value="" />
+            <input type="hidden" name="utm_source" value="" />
+            <input type="hidden" name="utm_medium" value="" />
+            <input type="hidden" name="utm_campaign" value="" />
+            <input type="hidden" name="utm_term" value="" />
+            <input type="hidden" name="utm_content" value="" />
+            <input type="hidden" name="gclid" value="" />
+            <input type="hidden" name="gbraid" value="" />
+            <input type="hidden" name="wbraid" value="" />
+            <input type="hidden" name="analytics_consent" value="Non rilevato" />
+            <input type="hidden" name="advertising_consent" value="Non rilevato" />
             <input class="form-honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <p class="form-intro"><strong>Richiedi la valutazione gratuita.</strong>Lascia i tuoi dati. Ti contatteremo su WhatsApp per concordare la videochiamata.</p>
             <div class="field"><label for="name">Nome e cognome</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Il tuo nome" required /></div>
             <div class="field"><label for="email">Email aziendale</label><input id="email" name="email" type="email" autocomplete="email" placeholder="nome@azienda.it" required /></div>
             <div class="field"><label for="phone">Cellulare WhatsApp</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+39 333 123 4567" required /></div>
+            <div class="field"><label for="budget-total">Budget complessivo mensile</label><select id="budget-total" name="budget_total" required><option value="" disabled selected>Seleziona una fascia</option><option value="Meno di 2.000 €">Meno di 2.000 €</option><option value="Tra 2.000 e 3.000 €">Tra 2.000 e 3.000 €</option><option value="Più di 3.000 €">Più di 3.000 €</option><option value="Non l’ho ancora definito">Non l’ho ancora definito</option></select></div>
             <div class="field"><label for="message">Come stai gestendo oggi marketing e acquisizione?</label><textarea id="message" name="message" placeholder="Descrivi brevemente la situazione e il principale problema commerciale che vuoi risolvere" required></textarea></div>
             <button class="button button--primary" type="submit">Richiedi valutazione gratuita</button>
+            <p class="form-microcopy">I dati inseriti saranno registrati nel foglio Google “Metrics • Ads” per gestire la tua richiesta. Il foglio è pubblico sul web: chiunque abbia il link può leggere i contatti. Consulta l’<a href="https://www.iubenda.com/privacy-policy/48751025" target="_blank" rel="noopener noreferrer">informativa privacy</a>.</p>
+            <p id="form-status" class="form-microcopy" role="status" aria-live="polite"></p>
             <p class="form-microcopy">La videochiamata dura 20 minuti e non comporta alcun impegno.</p>
           </form>
         </div>

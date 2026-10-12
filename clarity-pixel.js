@@ -29,13 +29,17 @@
   var conversionEvent = document.body && document.body.getAttribute('data-clarity-event');
   var trackConversion = function () {
     var eventName = document.body && document.body.getAttribute('data-clarity-event');
-    if (eventName) {
+    if (eventName && window.__metricsConfirmedLead === true) {
       window.clarity('event', eventName);
     }
   };
 
   if (conversionEvent) {
-    trackConversion();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', trackConversion, { once: true });
+    } else {
+      trackConversion();
+    }
   } else {
     document.addEventListener('DOMContentLoaded', trackConversion, { once: true });
   }
